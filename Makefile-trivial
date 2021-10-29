@@ -1,0 +1,9 @@
+#!/usr/bin/make -f
+
+name := "$(shell pwd | sed -r "s/.*\/([[:alnum:] _-]*)/\1/")"
+
+gcc:
+	g++ -std=c++20 -O3 -Wall -Wextra -Wpedantic -o $(name) $(name).cpp
+ll:
+	clang++ -std=c++20 -O3 -Wall -Wextra -Wpedantic -o $(name) $(name).cpp
+.PHONY:	gcc	ll
